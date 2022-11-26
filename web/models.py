@@ -3,11 +3,11 @@ from enum import Enum
 
 
 class Car(models.Model):
-    class CarState(Enum):
+    class CarState(models.TextChoices):
         new = 'NEW'
         used = 'USED'
 
-    class BodyStyle(Enum):
+    class BodyStyle(models.TextChoices):
         suv = 'SUV'
         sedan = 'Sedan'
         coupe = 'Coupe'
@@ -18,7 +18,7 @@ class Car(models.Model):
         pickup_truck = 'Pickup truck'
         convertible = 'Convertible'
 
-    class Color(Enum):
+    class Color(models.TextChoices):
         red = 'RED'
         orange = 'ORANGE'
         yellow = 'YELLOW'
@@ -27,19 +27,19 @@ class Car(models.Model):
         indigo = 'INDIGO'
         purple = 'PURPLE'
 
-    class FuelType(Enum):
+    class FuelType(models.TextChoices):
         gasoline = 'Gasoline'
         diesel = 'Diesel'
         hybrid = 'Hybrid'
         electric = 'Electric'
 
-    state = models.CharField(choices=CarState)
-    price = models.DecimalField(max_length=10)
+    state = models.CharField(choices=CarState.choices, max_length=5)
+    price = models.DecimalField(max_length=10, decimal_places=3, max_digits=6)
     picture = models.ImageField(upload_to='pictures/')
     description = models.CharField(max_length=100)
     make = models.CharField(max_length=30)
-    production_year = models.IntegerField(max_length=4)
+    production_year = models.IntegerField()
     mileage = models.IntegerField()
-    body_style = models.CharField(choices=BodyStyle)
-    color = models.CharField(choices=Color)
-    fuel_type = models.CharField(choices=FuelType)
+    body_style = models.CharField(choices=BodyStyle.choices, max_length=15)
+    color = models.CharField(choices=Color.choices, max_length=6)
+    fuel_type = models.CharField(choices=FuelType.choices, max_length=8)
