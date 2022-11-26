@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Currus</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div class="nav-half d-flex justify-content-between align-items-center">
+                <form action="" role="search">
+                    <input class="form-control  me-2 nav-search" type="search" placeholder="Search" aria-label="search">
+                    <!-- <i class="icon fa fa-search fa-lg" aria-hidden="true"></i> -->
+                </form>
+                <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> Favoirites</a>
+                <a href=""><i class="fa fa-user-o" aria-hidden="true"></i>Profile</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <div class="header-image">
+        <h1>Sadle your horse</h1>
+        <p class="slogan">“All of those cars were once just a dream in somebody’s head.”</p>
+    </div>
+</header>
+
+<section>
+    <div class="filter-main">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                        type="button" role="tab" aria-controls="nav-home" aria-selected="true">Make
+                </button>
+                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                        type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Body style
+                </button>
+
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                 tabindex="0">
+                <div class="main-filter">
+                    <form action="" class="d-flex flex-wrap">
+                        <div class="label">
+                            <select name="1" id="" class="main-select">
+                                <option value="">New & used</option>
+                                <option value="">New</option>
+                                <option value="">Used</option>
+                            </select>
+                            <label for="" class="label-main">Car state</label>
+                        </div>
+                        <div class="label">
+                            <select name="" id="" class="main-select">
+                                <option value="">Ferrari</option>
+                                <option value="">Lamborgini</option>
+                                <option value="">Hyundai</option>
+                                <option value="">Porsche</option>
+                                <option value="">Jaguar</option>
+                            </select>
+                            <label for="" class="label-main">Make</label>
+                        </div>
+                        <div class="label">
+                            <select name="3" id="" class="main-select">
+                                <option value="">Boxster</option>
+                                <option value="">Cayenne</option>
+                                <option value="">930</option>
+                                <option value="">Hybrid</option>
+                                <option value="">Macan</option>
+                            </select>
+                            <label for="" class="label-main">Model</label>
+                        </div>
+                        <div class="label">
+                            <select name="4" id="" class="main-select">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                            <label for="" class="label-main">Price</label>
+                        </div>
+                        <div class="label">
+                            <select name="" id="" class="main-select">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                            <label for="" class="label-main">Mileage</label>
+                        </div>
+                        <button type="submit" class="main-select btn-search-main">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                1233 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ea amet autem corporis cum at
+                dolores laborum aut eum est, aliquid, doloremque maiores id eaque quaerat debitis perspiciatis
+                exercitationem quis.
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
