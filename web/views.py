@@ -1,7 +1,14 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView, ListView
+from .models import Car
 
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'index.html')
+class HomePageView(TemplateView):
+    template_name = 'index.html'
+
+
+class SearchResultPage(ListView):
+    model = Car
+    template_name = 'result-page.html'
+

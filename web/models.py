@@ -1,5 +1,4 @@
 from django.db import models
-from enum import Enum
 
 
 class Car(models.Model):
@@ -43,3 +42,6 @@ class Car(models.Model):
     body_style = models.CharField(choices=BodyStyle.choices, max_length=15)
     color = models.CharField(choices=Color.choices, max_length=6)
     fuel_type = models.CharField(choices=FuelType.choices, max_length=8)
+
+    def __str__(self):
+        return self.description

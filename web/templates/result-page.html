@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,195 +9,149 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../static/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../static/css/bootstrap.css">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link rel="stylesheet" href="../../static/css/media.css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Currus</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Currus</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <div class="nav-half d-flex justify-content-between align-items-center">
-          <form action="" role="search">
-          <input class="form-control  me-2 nav-search" type="search" placeholder="Search" aria-label="search">
-          <!-- <i class="icon fa fa-search fa-lg" aria-hidden="true"></i> -->
-          </form>
-          <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> Favoirites</a>
-          <a href=""><i class="fa fa-user-o" aria-hidden="true"> Profile</i>
-          </a>
-              </div>
-           </div>
-         </div>
-      </nav>
-    
-      <div class="container">
-        <nav aria-label="breadcrumb">
+            <div class="nav-half d-flex justify-content-between align-items-center">
+                <form action="" role="search">
+                    <input class="form-control  me-2 nav-search" type="search" placeholder="Search" aria-label="search">
+                    <!-- <i class="icon fa fa-search fa-lg" aria-hidden="true"></i> -->
+                </form>
+                <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> Favoirites</a>
+                <a href=""><i class="fa fa-user-o" aria-hidden="true"> Profile</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Библиотека</li>
+            <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Библиотека</li>
         </ol>
-      </nav>
-      <p class="result-search">Results for Kia Telluride <span>1,056 matches</span></p>
-      <p class="basics">Basics</p>
-      <div class="row">
+    </nav>
+    <p class="result-search">Results for Kia Telluride <span>1,056 matches</span></p>
+    <p class="basics">Basics</p>
+    <div class="row">
         <div class="col-xl-5">
-          <form action="" class="d-flex flex-column">
-            <div class="label">
-            <select name="top-corner" id="" class="main-select">
-              <option value="">New & used</option>
-              <option value="">New</option>
-              <option value="">Used</option>
-            </select>
-            <label for="" class="label-main">Car state</label>
-          </div>
-            <div class="label">
-            <select name="" id="" class="main-select">
-              <option value="">Ferrari</option>
-              <option value="">Lamborgini</option>
-              <option value="">Hyundai</option>
-              <option value="">Porsche</option>
-              <option value="">Jaguar</option>
-            </select>
-            <label for="" class="label-main">Make</label>
-          </div>
-            <div class="label">
-            <select name="" id="" class="main-select">
-              <option value="">2021</option>
-              <option value="">2</option>
-              <option value="">3</option>
-              <option value="">4</option>
-              <option value="">5</option>
-            </select>
-            <label for="" class="label-main">Year of production</label>
-          </div>
-            <div class="label">
-            <select name="" id="" class="main-select">
-              <option value="">No max price</option>
-              <option value="">2</option>
-              <option value="">3</option>
-              <option value="">4</option>
-              <option value="">5</option>
-            </select>
-            <label for="" class="label-main">Price range</label>
-          </div>
-            <div class="label">
-            <select name="bottom-corner" id="" class="main-select">
-              <option value="">No max mileage</option>
-              <option value="">2</option>
-              <option value="">3</option>
-              <option value="">4</option>
-              <option value="">5</option>
-            </select>
-            <label for="" class="label-main">Mileage</label>
-          </div>
-          <p class="basics">Style</p>
-          <div class="label">
-            <select name="top-corner" id="" class="main-select">
-              <option value="">Suv</option>
-              <option value="">Super car</option>
-              <option value="">truck</option>
-            </select>
-            <label for="" class="label-main">Body style</label>
-          </div>
-            <div class="label">
-            <select name="bottom-corner" id="" class="main-select">
-              <option value="">Black</option>
-              <option value="">Red</option>
-              <option value="">Yellow</option>
-              <option value="">Pink</option>
-              <option value="">Green</option>
-            </select>
-            <label for="" class="label-main">Color</label>
-          </div>
-          <p class="basics">Performance</p>
-          <div class="label">
-            <select name="top-corner" id="" class="main-select">
-              <option value="">Fuel type</option>
-              <option value="">Disel</option>
-              <option value="">Gaz</option>
-            </select>
-            <label for="" class="label-main">Performance</label>
-          </div>
-          </form>
+            <form action="" class="d-flex flex-column">
+                <div class="label">
+                    <select name="top-corner" id="" class="main-select">
+                        <option value="">New & used</option>
+                        <option value="">New</option>
+                        <option value="">Used</option>
+                    </select>
+                    <label for="" class="label-main">Car state</label>
+                </div>
+                <div class="label">
+                    <select name="" id="" class="main-select">
+                        <option value="">Ferrari</option>
+                        <option value="">Lamborgini</option>
+                        <option value="">Hyundai</option>
+                        <option value="">Porsche</option>
+                        <option value="">Jaguar</option>
+                    </select>
+                    <label for="" class="label-main">Make</label>
+                </div>
+                <div class="label">
+                    <select name="" id="" class="main-select">
+                        <option value="">2021</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                    <label for="" class="label-main">Year of production</label>
+                </div>
+                <div class="label">
+                    <select name="" id="" class="main-select">
+                        <option value="">No max price</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                    <label for="" class="label-main">Price range</label>
+                </div>
+                <div class="label">
+                    <select name="bottom-corner" id="" class="main-select">
+                        <option value="">No max mileage</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                    <label for="" class="label-main">Mileage</label>
+                </div>
+                <p class="basics">Style</p>
+                <div class="label">
+                    <select name="top-corner" id="" class="main-select">
+                        <option value="">Suv</option>
+                        <option value="">Super car</option>
+                        <option value="">truck</option>
+                    </select>
+                    <label for="" class="label-main">Body style</label>
+                </div>
+                <div class="label">
+                    <select name="bottom-corner" id="" class="main-select">
+                        <option value="">Black</option>
+                        <option value="">Red</option>
+                        <option value="">Yellow</option>
+                        <option value="">Pink</option>
+                        <option value="">Green</option>
+                    </select>
+                    <label for="" class="label-main">Color</label>
+                </div>
+                <p class="basics">Performance</p>
+                <div class="label">
+                    <select name="top-corner" id="" class="main-select">
+                        <option value="">Fuel type</option>
+                        <option value="">Disel</option>
+                        <option value="">Gaz</option>
+                    </select>
+                    <label for="" class="label-main">Performance</label>
+                </div>
+            </form>
         </div>
         <div class="col-xl-7">
-          <div class="car-details d-flex justify-content-between">
-            <div class="image-car">
-              <img src="../../static/images/header.jpg" alt="">
-            </div>
-            <div class="info-car">
-              <div class="style-favourite">
-                <p class="type">New</p>
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
-              </div>
-              <p class="mt-3">Kia tellure</p>
-              <p class="mt-3">$37,504</p>
-              <div class="sell"><a href="">Seller page</a> </div>
-              <div class="sell detail"><a href="">See details</a></div>
-            </div>
-          </div>
-          <div class="car-details d-flex justify-content-between">
-            <div class="image-car">
-              <img src="../../static/images/header.jpg" alt="">
-            </div>
-            <div class="info-car">
-              <div class="style-favourite">
-                <p class="type">New</p>
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
-              </div>
-              <p class="mt-3">Kia tellure</p>
-              <p class="mt-3">$37,504</p>
-              <div class="sell"><a href="">Seller page</a> </div>
-              <div class="sell detail"><a href="">See details</a></div>
-            </div>
-          </div>
-          <div class="car-details d-flex justify-content-between">
-            <div class="image-car">
-              <img src="../../static/images/header.jpg" alt="">
-            </div>
-            <div class="info-car">
-              <div class="style-favourite">
-                <p class="type">New</p>
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
-              </div>
-              <p class="mt-3">Kia tellure</p>
-              <p class="mt-3">$37,504</p>
-              <div class="sell"><a href="">Seller page</a> </div>
-              <div class="sell detail"><a href="">See details</a></div>
-            </div>
-          </div>
-          <div class="car-details d-flex justify-content-between">
-            <div class="image-car">
-              <img src="../../static/images/header.jpg" alt="">
-            </div>
-            <div class="info-car">
-              <div class="style-favourite">
-                <p class="type">New</p>
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
-              </div>
-              <p class="mt-3">Kia tellure</p>
-              <p class="mt-3">$37,504</p>
-              <div class="sell"><a href="">Seller page</a> </div>
-              <div class="sell detail"><a href="">See details</a></div>
-            </div>
-          </div>
+            {% for car  in car_list %}
+                <div class="car-details d-flex justify-content-between">
+                    <div class="image-car">
+                        <img src="{{ car.picture.url }}">
+                    </div>
+                    <div class="info-car">
+                        <div class="style-favourite">
+                            <p class="type">{{ car.state }}</p>
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        </div>
+                        <p class="mt-3">{{ car.make }}</p>
+                        <p class="mt-3">${{ car.price }}</p>
+                        <div class="sell"><a href="">Seller page</a></div>
+                        <div class="sell detail"><a href="">See details</a></div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-      </div>
-      </div> 
-      
-    
-    
-    
-    
-    
-    <script src="../../static/js/jquery-3.6.0.min.js"></script>
-    <script src="../../static/js/popper.min.js"></script>
-    <script src="../../static/js/bootstrap.min.js"></script>
-    <script src="../../static/js/script.js"></script>
+    </div>
+</div>
+
+
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
