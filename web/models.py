@@ -33,6 +33,7 @@ class Car(models.Model):
         electric = 'Electric'
 
     state = models.CharField(choices=CarState.choices, max_length=5)
+    name = models.CharField(max_length=100)
     price = models.DecimalField(max_length=10, decimal_places=3, max_digits=6)
     picture = models.ImageField(upload_to='pictures/')
     description = models.CharField(max_length=100)
