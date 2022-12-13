@@ -40,7 +40,7 @@
 <div class="container main-container">
     <header>
         <div class="header-image">
-            <h1>Sadle your horse</h1>
+            <h1>Saddle your horse</h1>
             <p class="slogan">“All of those cars were once just a dream in somebody’s head.”</p>
         </div>
     </header>
@@ -61,52 +61,51 @@
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
                      tabindex="0">
                     <div class="main-filter">
-                        <form action="{% url 'search_results' %}" class="d-flex flex-wrap" name="filter">
+                        <form action="{% url 'filter_results' %}" class="d-flex flex-wrap" name="filter">
                             <div class="label">
-                                <select name="" id="" class="main-select">
-                                    <option value="">New & used</option>
-                                    <option value="NEW">New</option>
+                                <select name="state" id="" class="main-select">
+                                    <option value="New">New</option>
                                     <option value="USED">Used</option>
                                 </select>
                                 <label for="" class="label-main">Car state</label>
                             </div>
                             <div class="label">
-                                <select name="" id="" class="main-select">
-                                    <option value="">Ferrari</option>
-                                    <option value="">Lamborghini</option>
-                                    <option value="">Hyundai</option>
-                                    <option value="">Porsche</option>
-                                    <option value="">Jaguar</option>
+                                <select name="make" id="" class="main-select">
+                                    <option value="Audi">Audi</option>
+                                    <option value="Lamborghini">Lamborghini</option>
+                                    <option value="Hyundai">Hyundai</option>
+                                    <option value="Porsche">Porsche</option>
+                                    <option value="Jaguar">Jaguar</option>
                                 </select>
                                 <label for="" class="label-main">Make</label>
                             </div>
                             <div class="label">
-                                <select name="3" id="" class="main-select">
-                                    <option value="">Boxster</option>
-                                    <option value="">Cayenne</option>
-                                    <option value="">930</option>
-                                    <option value="">Hybrid</option>
-                                    <option value="">Macan</option>
-                                </select>
-                                <label for="" class="label-main">Model</label>
-                            </div>
-                            <div class="label">
-                                <select name="4" id="" class="main-select">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
+                                <select name="price" id="" class="main-select">
+                                    <option value="2000">2000$</option>
+                                    <option value="7000">7000$</option>
+                                    <option value="12000">12,000$</option>
+                                    <option value="17000">17,000$</option>
+                                    <option value="25000">25,000$</option>
+                                    <option value="30000">30,000$</option>
+                                    <option value="35000">35,000$</option>
+                                    <option value="40000">40,000$</option>
+                                    <option value="50000">50,000$</option>
+                                    <option value="60000">60,000$</option>
+                                    <option value="90000">90,000$</option>
+                                    <option value="110000">110,000$</option>
                                 </select>
                                 <label for="" class="label-main">Price</label>
                             </div>
                             <div class="label">
-                                <select name="" id="" class="main-select">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
+                                <select name="mileage" id="" class="main-select">
+                                    <option value="0">0</option>
+                                    <option value="300">300</option>
+                                    <option value="1000">1000</option>
+                                    <option value="3000">3000</option>
+                                    <option value="8000">8000</option>
+                                    <option value="20000">20000</option>
+                                    <option value="30000">30000</option>
+                                    <option value="50000">50000</option>
                                 </select>
                                 <label for="" class="label-main">Mileage</label>
                             </div>
@@ -127,47 +126,22 @@
         <p class="type-car">Popular cars</p>
         <div class="container">
             <div class="row justify-content-between">
-                <div class="popular-car-card col-lg-3">
-                    <img src="{% static 'images/header1.jpg' %}" alt="">
-                    <p class=" car-info">Kia telluride <span class="popular-type text-center">· New</span></p>
-                    <p class="car-price">$37,025</p>
-                </div>
-                <div class="popular-car-card col-lg-3">
-                    <img src="images/header1.jpg" alt="">
-                    <p class="car-info">Kia telluride <span class="popular-type text-center">· New</span></p>
-                    <p class="car-price">$37,025</p>
-                </div>
-                <div class="popular-car-card col-lg-3">
-                    <img src="images/header1.jpg" alt="">
-                    <p class="car-info">Kia telluride <span class="popular-type text-center">· New</span></p>
-                    <p class="car-price">$37,025</p>
-                </div>
-                <div class="popular-car-card col-lg-3">
-                    <img src="images/header1.jpg" alt="">
-                    <p class="car-info">Kia telluride <span class="popular-type text-center">· New</span></p>
-                    <p class="car-price">$37,025</p>
-                </div>
-                <div class="popular-car-card col-lg-3">
-                    <img src="images/header1.jpg" alt="">
-                    <p class="car-info">Kia telluride <span class="popular-type text-center">· New</span></p>
-                    <p class="car-price">$37,025</p>
-                </div>
-                <div class="popular-car-card col-lg-3">
-                    <img src="images/header1.jpg" alt="">
-                    <p class="car-info">Kia telluride <span class="popular-type text-center">· New</span></p>
-                    <p class="car-price">$37,025</p>
-                </div>
+                {% for car in car_list %}
+                    <div class="popular-car-card col-lg-3">
+                        <img src="{{ car.picture.url }}" alt="">
+                        <p class="car-info">{{ car.name }} <span
+                                class="popular-type text-center">· {{ car.state }}</span></p>
+                        <p class="car-price">${{ car.price }}</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
         <p class="type-car mt-3">Categories</p>
         <div class="container">
             <div class="row justify-content-between">
-                <div class="category type-car mt-0 col-lg-3">Category</div>
-                <div class="category type-car mt-0 col-lg-3">Category</div>
-                <div class="category type-car mt-0 col-lg-3">Category</div>
-                <div class="category type-car mt-0 col-lg-3">Category</div>
-                <div class="category type-car mt-0 col-lg-3">Category</div>
-                <div class="category type-car mt-0 col-lg-3">Category</div>
+                {% for category in categories %}
+                    <div class="category type-car mt-0 col-lg-3">{{ category }}</div>
+                {% endfor %}
             </div>
         </div>
     </section>
