@@ -7,7 +7,7 @@ class Car(models.Model):
         used = 'USED'
 
     class BodyStyle(models.TextChoices):
-        suv = 'SUV'
+        suv = 'Suv'
         sedan = 'Sedan'
         coupe = 'Coupe'
         hatchback = 'Hatchback'
@@ -25,6 +25,9 @@ class Car(models.Model):
         blue = 'BLUE'
         indigo = 'INDIGO'
         purple = 'PURPLE'
+        white = 'WHITE'
+        black = 'BLACK'
+        gray = 'GRAY'
 
     class FuelType(models.TextChoices):
         gasoline = 'Gasoline'
@@ -34,10 +37,11 @@ class Car(models.Model):
 
     state = models.CharField(choices=CarState.choices, max_length=5)
     name = models.CharField(max_length=100)
-    price = models.DecimalField(max_length=10, decimal_places=3, max_digits=6)
-    picture = models.ImageField(upload_to='pictures/')
+    price = models.IntegerField()
+    picture = models.ImageField(upload_to='images/')
     description = models.CharField(max_length=100)
     make = models.CharField(max_length=30)
+    url = models.CharField(max_length=150)
     production_year = models.IntegerField()
     mileage = models.IntegerField()
     body_style = models.CharField(choices=BodyStyle.choices, max_length=15)
@@ -45,4 +49,4 @@ class Car(models.Model):
     fuel_type = models.CharField(choices=FuelType.choices, max_length=8)
 
     def __str__(self):
-        return self.description
+        return self.name + " $ " + str(self.price)
