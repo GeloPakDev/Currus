@@ -22,23 +22,7 @@ ul{
 body{
     font-family: 'Montserrat';
 }
-/* Scroll button */
-#top {
-    display: none;
-    position: fixed;
-    right: 5%;
-    bottom: 2%;
-    cursor: pointer;
-    z-index: 10;
-}
 
-#top img {
-    padding: 15px;
-    border-radius: 3px;
-    width: 70px;
-    height: 70px;
-    background: #ff6525;}
-/* Scroll button */
 /* ********Navbar************ */
 .navbar{
     padding: 30px 60px;   
@@ -67,9 +51,7 @@ nav form:before{
     color: #333;
     background: url('../images/Search.svg') no-repeat center center / contain;
 }
-nav form:before:focus{
-    background: #000;
-}
+
 .navbar-brand{
     font-size: 36px;
     color: #394686 !important;
@@ -93,6 +75,7 @@ nav form:before:focus{
 /* *********Navbar********* */
 .main-container{
     width: 893px;
+    margin: 0 auto;
 }
 /* *****Header********* */
 .header-image{
@@ -151,7 +134,9 @@ nav form:before:focus{
 .tab-content {
     padding-top: 20px;
 }
-
+.advansed-link{
+    color: #394686 !important;
+}
 /* Input main*/
 .main-select{
     width: 268px;
@@ -285,10 +270,12 @@ nav form:before:focus{
 /* Result page */
 /* Section popular cars */
 .type-car{
-    color: #333;
     font-size: 20px;
     margin-top: 60px;
     margin-bottom: 30px;
+}
+.type-car a{
+    color: #333;   
 }
 .popular-car-card img{
     width: 100%;
@@ -322,7 +309,10 @@ nav form:before:focus{
     background: #D9D9D9;
     width: 270px;
     border-radius: 30px;
-    padding: 38px 88px;   
+    height: 100px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* Section popular cars */
 /* Details page */
@@ -330,6 +320,7 @@ nav form:before:focus{
     position: relative;
 }
 .carousel-details img{
+    border-radius: 30px;
     width: 860px;
     height: 430px;
 }
@@ -379,6 +370,16 @@ nav form:before:focus{
     opacity: .5;
 }
 /* Details page */
-
+/* Advanced search */
+.advanced-container{
+    width: 536px;
+}
+.advanced-select{
+    width: 536px;
+}
+.no-border{
+    border-radius: 0 !important;
+}
+/* Advanced search */
 
 

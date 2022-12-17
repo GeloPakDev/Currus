@@ -27,7 +27,8 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <div class="nav-half d-flex justify-content-between align-items-center">
                 <form action="{% url 'search_results' %}" role="search">
-                    <input class="form-control  me-2 nav-search" type="search" name="query" placeholder="Search" aria-label="search">
+                    <input class="form-control  me-2 nav-search" type="search" name="query" placeholder="Search"
+                           aria-label="search">
                 </form>
                 <a href=""><img src="{% static '/images/Heart.svg' %}" alt=""> Favorites</a>
                 <a href=""><img src="{% static '/images/User.svg' %} " alt=""> Profile</a>
@@ -47,83 +48,109 @@
     <p class="basics">Basics</p>
     <div class="row">
         <div class="col-xl-5">
-            <form action="" class="d-flex flex-column">
+            <form action="{% url 'full_filter_results' %}" class="d-flex flex-column">
                 <div class="label">
-                    <select name="top-corner" id="" class="main-select">
-                        <option value="">New & used</option>
-                        <option value="">New</option>
-                        <option value="">Used</option>
+                    <select name="state" id="" class="main-select">
+                        <option value="New">New</option>
+                        <option value="USED">Used</option>
                     </select>
                     <label for="" class="label-main">Car state</label>
                 </div>
                 <div class="label">
-                    <select name="" id="" class="main-select">
-                        <option value="">Ferrari</option>
-                        <option value="">Lamborgini</option>
-                        <option value="">Hyundai</option>
-                        <option value="">Porsche</option>
-                        <option value="">Jaguar</option>
+                    <select name="make" id="" class="main-select">
+                        <option value="Audi">Audi</option>
+                        <option value="Lamborghini">Lamborghini</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Porsche">Porsche</option>
+                        <option value="Jaguar">Jaguar</option>
                     </select>
                     <label for="" class="label-main">Make</label>
                 </div>
                 <div class="label">
-                    <select name="" id="" class="main-select">
-                        <option value="">2021</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
+                    <select name="year_of_production" id="" class="main-select">
+                        <option value="2015">2015</option>
+                        <option value="2016">1016</option>
+                        <option value="2018">2018</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
                     </select>
                     <label for="" class="label-main">Year of production</label>
                 </div>
                 <div class="label">
-                    <select name="" id="" class="main-select">
-                        <option value="">No max price</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
+                    <select name="price" id="" class="main-select">
+                        <option value="2000">2000$</option>
+                        <option value="7000">7000$</option>
+                        <option value="12000">12,000$</option>
+                        <option value="17000">17,000$</option>
+                        <option value="25000">25,000$</option>
+                        <option value="30000">30,000$</option>
+                        <option value="35000">35,000$</option>
+                        <option value="40000">40,000$</option>
+                        <option value="50000">50,000$</option>
+                        <option value="60000">60,000$</option>
+                        <option value="90000">90,000$</option>
+                        <option value="110000">110,000$</option>
                     </select>
                     <label for="" class="label-main">Price range</label>
                 </div>
                 <div class="label">
-                    <select name="bottom-corner" id="" class="main-select">
-                        <option value="">No max mileage</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
+                    <select name="mileage" id="" class="main-select">
+                        <option value="0">0</option>
+                        <option value="300">300</option>
+                        <option value="1000">1000</option>
+                        <option value="3000">3000</option>
+                        <option value="8000">8000</option>
+                        <option value="20000">20000</option>
+                        <option value="30000">30000</option>
+                        <option value="50000">50000</option>
                     </select>
                     <label for="" class="label-main">Mileage</label>
                 </div>
                 <p class="basics">Style</p>
+
                 <div class="label">
-                    <select name="top-corner" id="" class="main-select">
-                        <option value="">Suv</option>
-                        <option value="">Super car</option>
-                        <option value="">truck</option>
+                    <select name="body_style" id="" class="main-select">
+                        <option value="Suv">Suv</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Coupe">Coupe</option>
+                        <option value="Hatchback">Hatchback</option>
+                        <option value="Minivan">Minivan</option>
+                        <option value="Wagon">Wagon</option>
+                        <option value="Passenger Van">Passenger Van</option>
+                        <option value="Pickup truck">Pickup truck</option>
+                        <option value="Convertible">Convertible</option>
                     </select>
                     <label for="" class="label-main">Body style</label>
                 </div>
+
                 <div class="label">
-                    <select name="bottom-corner" id="" class="main-select">
-                        <option value="">Black</option>
-                        <option value="">Red</option>
-                        <option value="">Yellow</option>
-                        <option value="">Pink</option>
-                        <option value="">Green</option>
+                    <select name="color" id="" class="main-select">
+                        <option value="Red">Red</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Green">Green</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Indigo">Indigo</option>
+                        <option value="Purple">Purple</option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Gray">Gray</option>
                     </select>
                     <label for="" class="label-main">Color</label>
                 </div>
+
                 <p class="basics">Performance</p>
                 <div class="label">
-                    <select name="top-corner" id="" class="main-select">
-                        <option value="">Fuel type</option>
-                        <option value="">Disel</option>
-                        <option value="">Gaz</option>
+                    <select name="fuel_type" id="" class="main-select">
+                        <option value="Gasoline">Gasoline</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="Hybrid">Hybrid</option>
+                        <option value="Electric">Electric</option>
                     </select>
-                    <label for="" class="label-main">Performance</label>
+                    <label for="" class="label-main">Fuel type</label>
                 </div>
+                <button type="submit" class="main-select btn-search-main">Search</button>
+
             </form>
         </div>
         <div class="col-xl-7">
@@ -147,7 +174,6 @@
         </div>
     </div>
 </div>
-
 
 
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>

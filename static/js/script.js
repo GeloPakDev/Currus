@@ -15,23 +15,5 @@ function print_slogan () {
 }
 var timer = setInterval(print_slogan, 50)
 /* Main */
-/* Scroll button */
-$(document).ready(function () {
-    $(window).scroll(function () { 
-        if ($(this).scrollTop() > 500) {
-            $('#top').fadeIn();
-            
-        }
-        else{
-            $('#top').fadeOut();
-        }   
-    });
-    $('#top').click(function () { 
-        $('html').animate({
-            scrollTop: 0
-        }, 1000)
-        
-    });
-});
-/* Scroll button */ 
+
 
