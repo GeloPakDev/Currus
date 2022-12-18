@@ -30,8 +30,12 @@
                     <input name="query" class="form-control  me-2 nav-search" type="search" placeholder="Search"
                            aria-label="search">
                 </form>
-                <a href=""><img src="{% static '/images/Heart.svg' %}" alt=""> Favorites</a>
-                <a href=""><img src="{% static '/images/User.svg' %} " alt=""> Profile</a>
+                 <a href=""><img src="{% static '/images/Heart.svg' %}" alt=""> Favorites</a>
+                {% if user.is_authenticated %}
+                    <a href=""><img src="{% static '/images/User.svg' %} " alt=""> {{ user.username }}</a>
+                {% else %}
+                    <a href=""><img src="{% static '/images/User.svg' %} " alt=""> Profile</a>
+                {% endif %}
             </div>
         </div>
     </div>

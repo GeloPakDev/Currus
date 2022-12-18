@@ -31,7 +31,11 @@
                            aria-label="search">
                 </form>
                 <a href=""><img src="{% static '/images/Heart.svg' %}" alt=""> Favorites</a>
-                <a href=""><img src="{% static '/images/User.svg' %} " alt=""> Profile</a>
+                {% if user.is_authenticated %}
+                    <a href=""><img src="{% static '/images/User.svg' %} " alt=""> {{ user.username }}</a>
+                {% else %}
+                    <a href=""><img src="{% static '/images/User.svg' %} " alt=""> Profile</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -52,16 +56,21 @@
                 <div class="label">
                     <select name="state" id="" class="main-select">
                         <option value="New">New</option>
-                        <option value="USED">Used</option>
+                        <option value="Used">Used</option>
                     </select>
                     <label for="" class="label-main">Car state</label>
                 </div>
                 <div class="label">
                     <select name="make" id="" class="main-select">
-                        <option value="Audi">Audi</option>
+                        <option value="Ferrari">Ferrari</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Mercedes">Mercedes</option>
                         <option value="Lamborghini">Lamborghini</option>
-                        <option value="Hyundai">Hyundai</option>
                         <option value="Porsche">Porsche</option>
+                        <option value="Audi">Audi</option>
+                        <option value="Tesla">Tesla</option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Kia">Kia</option>
                         <option value="Jaguar">Jaguar</option>
                     </select>
                     <label for="" class="label-main">Make</label>

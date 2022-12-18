@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 
 class Car(models.Model):
     class CarState(models.TextChoices):
@@ -18,16 +20,16 @@ class Car(models.Model):
         convertible = 'Convertible'
 
     class Color(models.TextChoices):
-        red = 'RED'
-        orange = 'ORANGE'
-        yellow = 'YELLOW'
-        green = 'GREEN'
-        blue = 'BLUE'
-        indigo = 'INDIGO'
-        purple = 'PURPLE'
-        white = 'WHITE'
-        black = 'BLACK'
-        gray = 'GRAY'
+        red = 'Red'
+        orange = 'Orange'
+        yellow = 'Yellow'
+        green = 'Green'
+        blue = 'Blue'
+        indigo = 'Indigo'
+        purple = 'Purple'
+        white = 'White'
+        black = 'Black'
+        gray = 'Gray'
 
     class FuelType(models.TextChoices):
         gasoline = 'Gasoline'
@@ -35,12 +37,24 @@ class Car(models.Model):
         hybrid = 'Hybrid'
         electric = 'Electric'
 
+    class Make(models.TextChoices):
+        ferrari = 'Ferrari'
+        bmw = 'BMW'
+        mercedes = 'Mercedes'
+        lamborghini = 'Lamborghini'
+        porsche = 'Porsche'
+        audi = 'Audi'
+        tesla = 'Tesla'
+        jaguar = 'Jaguar'
+        jeep = 'Jeep'
+        kia = 'Kia'
+
     state = models.CharField(choices=CarState.choices, max_length=5)
     name = models.CharField(max_length=100)
     price = models.IntegerField()
     picture = models.ImageField(upload_to='images/')
-    description = models.CharField(max_length=100)
-    make = models.CharField(max_length=30)
+    description = models.CharField(max_length=500)
+    make = models.CharField(choices=Make.choices, max_length=30)
     url = models.CharField(max_length=150)
     production_year = models.IntegerField()
     mileage = models.IntegerField()

@@ -7,42 +7,66 @@ h5,
 h6,
 p,
 ul,
-ol{
+ol {
     margin: 0;
     padding: 0;
 }
+
 a:hover,
-a{
+a {
     text-decoration: none;
 }
-ul{
+
+ul {
     list-style: none;
 }
+
 /* ****MAIN**** */
-body{
+body {
     font-family: 'Montserrat';
 }
 
+/* Scroll button */
+#top {
+    display: none;
+    position: fixed;
+    right: 5%;
+    bottom: 2%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#top img {
+    padding: 15px;
+    border-radius: 3px;
+    width: 70px;
+    height: 70px;
+    background: #ff6525;
+}
+
+/* Scroll button */
 /* ********Navbar************ */
-.navbar{
-    padding: 30px 60px;   
+.navbar {
+    padding: 30px 60px;
     width: 100%;
     background: #fff;
     margin-bottom: 40px;
 }
 
-.nav-search{
+.nav-search {
     width: 360px;
     height: 52px;
     border-radius: 30px;
     outline: none;
     padding: 10px 16px 10px 46px;
 }
-nav form{
+
+nav form {
     position: relative;
 }
-nav form:before{
-    content: ""; 
+
+nav form:before {
+    content: "";
     position: absolute;
     left: 16px;
     top: 0;
@@ -52,33 +76,39 @@ nav form:before{
     background: url('../images/Search.svg') no-repeat center center / contain;
 }
 
-.navbar-brand{
+.navbar-brand {
     font-size: 36px;
     color: #394686 !important;
     font-family: 'Montserrat', sans-serif;
     line-height: 44px;
 }
-.navbar .collapse a{
+
+.navbar .collapse a {
     font-size: 20px;
     color: #000 !important;
     padding: 10px 16px;
 }
-.navbar .collapse a:hover{
+
+.navbar .collapse a:hover {
     color: #394686 !important;
 }
-.navbar input[type="search"]:hover{
+
+.navbar input[type="search"]:hover {
     border: 1px solid #394686;
 }
-.navbar input[type="search"]:focus{
+
+.navbar input[type="search"]:focus {
     border: none;
 }
+
 /* *********Navbar********* */
-.main-container{
+.main-container {
     width: 893px;
     margin: 0 auto;
 }
+
 /* *****Header********* */
-.header-image{
+.header-image {
     background: url('../images/header1.jpg') no-repeat center center / cover;
     height: 430px;
     color: #fff;
@@ -86,22 +116,26 @@ nav form:before{
     margin: 0 auto;
     border-radius: 30px;
 }
-.header-image h1{
+
+.header-image h1 {
     font-size: 40px;
     padding: 45px 0 0 35px;
 }
-.header-image p{
+
+.header-image p {
     padding: 30px 0 0 35px;
-    font-size: 25px;   
+    font-size: 25px;
 }
+
 /* *****Header********* */
 
 /* *************Section main-filter*********** */
-.main-filter{
+.main-filter {
     margin-top: 30px;
-    
+
 }
-.filter-main{
+
+.filter-main {
     width: 860px;
     height: 290px;
     border-radius: 15px;
@@ -109,36 +143,43 @@ nav form:before{
     background: #f1f1f1;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.nav-tabs .nav-link.active{
+
+.nav-tabs .nav-link.active {
     border-color: transparent;
     box-shadow: inset 0 -2px 0 #333;
     color: #212121 !important;
     background: transparent;
 }
+
 .nav-tabs .nav-link {
     font-size: 16px;
     color: #555 !important;
-    border-top-left-radius: 0; 
+    border-top-left-radius: 0;
     border-top-right-radius: 0;
     transition: none;
     outline: none;
     border: none;
 }
+
 .nav-tabs {
     border-bottom: none !important;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     border: none;
 
 }
+
 .tab-content {
     padding-top: 20px;
 }
-.advansed-link{
+
+.advansed-link {
     color: #394686 !important;
 }
+
 /* Input main*/
-.main-select{
+.main-select {
     width: 268px;
     height: 76px;
     background: #fff;
@@ -147,33 +188,40 @@ nav form:before{
     padding: 30px 0 16px 10px;
     font-size: 18px;
 }
-.btn-search-main{
+
+.btn-search-main {
     padding: 28px 106px;
     background: #394686;
     color: #fff;
-    font-size: 16px;   
+    font-size: 16px;
 }
-.label{
+
+.label {
     position: relative;
 }
-.label-main{
+
+.label-main {
     position: absolute;
     top: 10px;
     font-size: 15px;
     color: rgb(129, 127, 127);
     left: 16px;
 }
+
 .label select[name="1"] {
-    border-top-left-radius: 15px;   
+    border-top-left-radius: 15px;
 }
+
 .label select[name="3"] {
-    border-top-right-radius: 15px;   
+    border-top-right-radius: 15px;
 }
+
 .label select[name="4"] {
-    border-bottom-left-radius: 15px;   
+    border-bottom-left-radius: 15px;
 }
-.btn-search-main{
-    border-bottom-right-radius: 15px;   
+
+.btn-search-main {
+    border-bottom-right-radius: 15px;
 }
 
 /* Input */
@@ -182,40 +230,46 @@ nav form:before{
 /* ****MAIN**** */
 /* Result page */
 
-.breadcrumb-item.active{
+.breadcrumb-item.active {
     color: #333 !important;
 }
-.breadcrumb-item a{
+
+.breadcrumb-item a {
     color: rgba(51, 51, 51, 0.5) !important;
 }
-.result-search{
+
+.result-search {
     margin: 40px 0 0;
     font-size: 20px;
     color: #333;
     line-height: 24px;
 }
-.result-search span{
+
+.result-search span {
     font-size: 16px;
     line-height: 20px;
     color: rgba(51, 51, 51, 0.5);
 }
- 
-.basics{
+
+.basics {
     font-size: 16px;
     color: #333;
     line-height: 20px;
     margin-bottom: 20px;
     margin-top: 30px;
 }
+
 .label select[name="top-corner"] {
-    border-top-left-radius: 15px; 
-    border-top-right-radius: 15px; 
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
+
 .label select[name="bottom-corner"] {
-    border-bottom-left-radius: 15px; 
-    border-bottom-right-radius: 15px; 
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
-.car-details{
+
+.car-details {
     width: 532px;
     height: 266px;
     background: #f1f1f1;
@@ -223,110 +277,130 @@ nav form:before{
     padding: 20px;
     margin-bottom: 30px;
 }
-.image-car img{
+
+.image-car img {
     width: 206px;
     height: 206px;
     border-radius: 15px;
     margin: 10px 35px 10px 15px;
 }
-.info-car{
+
+.info-car {
     width: 236px;
 }
-.info-car p{
+
+.info-car p {
     font-size: 16px;
     font-weight: 500;
-    line-height: 20px;   
+    line-height: 20px;
 }
-.style-favourite{
+
+.style-favourite {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.style-favourite p{
-    color: rgba(51, 51, 51, 0.5);   
+
+.style-favourite p {
+    color: rgba(51, 51, 51, 0.5);
 }
-.sell{
+
+.sell {
     width: 236px;
     height: 52px;
     border-radius: 15px;
     background: #394686;
-    
+
     text-align: center;
     line-height: 52px;
     margin-top: 30px;
 }
-.sell a{
-    color: #fff !important;   
+
+.sell a {
+    color: #fff !important;
 }
-.detail{
+
+.detail {
     background: transparent;
-  
+
     border-radius: 0;
     margin-top: 0;
 }
-.detail a{
-    color: #394686 !important;    
+
+.detail a {
+    color: #394686 !important;
 }
+
 /* Result page */
 /* Section popular cars */
-.type-car{
+.type-car {
     font-size: 20px;
     margin-top: 60px;
     margin-bottom: 30px;
 }
-.type-car a{
-    color: #333;   
+
+.type-car a {
+    color: #333;
 }
-.popular-car-card img{
+
+.popular-car-card img {
     width: 100%;
     height: 147px;
 }
-.popular-car-card{
+
+.popular-car-card {
     width: 270px;
     height: 270px;
     border-radius: 30px;
     overflow: hidden;
-    background: #F1F1F1;   
+    background: #F1F1F1;
     padding: 0;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
-.car-info{
+
+.car-info {
     margin: 21px 0 10px 20px;
     color: #333;
     font-size: 16px;
     font-weight: 400;
 }
-.popular-type{
+
+.popular-type {
     color: rgba(51, 51, 51, 0.5);
 }
-.car-price{
+
+.car-price {
     color: #333;
     font-size: 20px;
     font-weight: 500;
     margin-left: 20px;
 }
-.category{
+
+.category {
     background: #D9D9D9;
     width: 270px;
     border-radius: 30px;
-    height: 100px; 
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /* Section popular cars */
 /* Details page */
-.carousel-details{
+.carousel-details {
     position: relative;
 }
-.carousel-details img{
+
+.carousel-details img {
     border-radius: 30px;
     width: 860px;
     height: 430px;
 }
-.favourite{
+
+.favourite {
     width: 50px;
-    height: 50px;   
+    height: 50px;
     background: #F6F7F8;
     border-radius: 50%;
     display: flex;
@@ -336,50 +410,234 @@ nav form:before{
     top: 20px;
     right: 20px;
 }
-.favourite img{
+
+.favourite img {
     width: 24px;
     height: 24px;
 }
-.detail-info{
+
+.detail-info {
     width: 860px;
     height: 260px;
 }
-.detail-img img{
+
+.detail-img img {
     width: 300px;
     height: 206px;
 }
-.info-car{
+
+.info-car {
     width: 462px;
 }
-.recomend{
+
+.recomend {
     font-size: 20px;
 }
-.name-price p{
+
+.name-price p {
     color: #000;
     font-size: 20px;
     font-weight: 400;
 }
-.name-price .price-details{
+
+.name-price .price-details {
     font-size: 24px;
     margin-bottom: 15px;
 }
-.detail-paragragh{
+
+.detail-paragragh {
     font-size: 18px;
     margin-top: 15px;
     color: #000;
     opacity: .5;
 }
+
 /* Details page */
 /* Advanced search */
-.advanced-container{
+.advanced-container {
     width: 536px;
 }
-.advanced-select{
+
+.advanced-select {
     width: 536px;
 }
-.no-border{
+
+.no-border {
     border-radius: 0 !important;
 }
-/* Advanced search */
 
+/* Advanced search */
+/* Login page */
+.login-box {
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #ececec;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.register-login {
+    height: 500px;
+}
+
+.login-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #394686, #394686);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.login-box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #394686, #394686);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.login-form {
+    position: absolute;
+    inset: 8px;
+    border-radius: 8px;
+    background: #F6F7F8;
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h2 {
+    color: #394686;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: .1em;
+}
+
+.inputBox {
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+.inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: .05em;
+    z-index: 10;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    pointer-events: none;
+    letter-spacing: .05em;
+    transition: .5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #394686;
+    transform: translateX(0px) translateY(-34px);
+    font-size: 0.75em;
+}
+
+.inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #394686;
+    border-radius: 4px;
+    transition: .5s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i {
+    height: 44px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+}
+
+.links a:hover,
+.links a:nth-child(2) {
+    color: #394686;
+}
+
+.login-form input[type="submit"] {
+    border: none;
+    outline: none;
+    padding: 11px 25px;
+    background: #394686;
+    color: #fff;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-form input[type="submit"].register-btn {
+    padding: 15px 30px;
+}
+
+.login-form input[type="submit"]:active {
+    opacity: .8;
+}
+
+/* Login page */
+/* Sign in-out */
+.nickname {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.nickname-email {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+/* Sign in-out */
 

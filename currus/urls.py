@@ -5,7 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('web.urls'))
+    path('', include('web.urls')),
+    path("accounts/", include("django.contrib.auth.urls"))
 ]
-
+# allow access for displaying photos
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

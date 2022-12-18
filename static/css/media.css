@@ -13,19 +13,49 @@
     .navbar{
         padding: 32px 30px;
     }
-    header{
-        height: 700px;
-    }
+
     header h1{
         padding-top: 100px;
-        font-size: 45px;
+        font-size: 35px;
     }
    
     header p{
-        font-size: 25px;
+        font-size: 22px;
+    }
+    .header-image {
+        width: inherit;   
+    }
+    .filter-main {
+        width: 700px;   
+        height: 380px;
+    }
+    .tab-pane form{
+        display: flex;
+        justify-content: space-between;
+        column-gap: 10px;
+    }
+    .main-select {
+        width: 320px;   
+    }
+    form .label, button{
+        margin-top: 5px;
+    }
+    .label select[name],
+    .btn-search-main {
+        border-radius: 0;
+    }
+    .popular-car-card,
+    .category {
+        width: 330px;   
+    }
+    .navbar{
+        width: 685px;
     }
 }
 @media (max-width: 767.98px){
+    .container {
+        max-width: 680px;   
+    }
     .nav-half{
         display: flex;
         flex-direction: column;
@@ -42,11 +72,21 @@
     header p{
         font-size: 18px;
     }
-    header{
-        height: 500px;
+    
+    .filter-main {
+        width: inherit;
+        
     }
+    .main-select {
+        width: 300px;      
+    }
+    .popular-car-card, .category {
+        width: 320px;   
+    }
+    
 }
 @media (max-width: 575.98px){
+    
     .navbar {
         padding: 32px 0px;
     }
@@ -57,7 +97,11 @@
     header p{
         font-size: 14px;
     }
-    header{
-        height: 400px;
+    
+    .filter-main{
+        margin-top: 20px;
     }
+    /* .navbar{
+        width: 685px;
+    } */
 }

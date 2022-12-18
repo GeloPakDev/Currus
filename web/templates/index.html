@@ -31,7 +31,11 @@
                            aria-label="search">
                 </form>
                 <a href=""><img src="{% static '/images/Heart.svg' %}" alt=""> Favorites</a>
-                <a href=""><img src="{% static '/images/User.svg' %} " alt=""> Profile</a>
+                {% if user.is_authenticated %}
+                    <a href=""><img src="{% static '/images/User.svg' %} " alt=""> {{ user.username }}</a>
+                {% else %}
+                    <a href=""><img src="{% static '/images/User.svg' %} " alt=""> Profile</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -47,7 +51,7 @@
 
     <section class="main-filter">
         <div class="filter-main">
-            <nav>
+            <nav class="d-flex justify-content-between align-items-center">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
                             type="button" role="tab" aria-controls="nav-home" aria-selected="true">Make
@@ -56,6 +60,7 @@
                             type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Body style
                     </button>
                 </div>
+                <a href="{% url 'advanced_search' %}" class="advanced-link">Advanced search</a>
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
@@ -71,10 +76,15 @@
                             </div>
                             <div class="label">
                                 <select name="make" id="" class="main-select">
-                                    <option value="Audi">Audi</option>
+                                    <option value="Ferrari">Ferrari</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="Mercedes">Mercedes</option>
                                     <option value="Lamborghini">Lamborghini</option>
-                                    <option value="Hyundai">Hyundai</option>
                                     <option value="Porsche">Porsche</option>
+                                    <option value="Audi">Audi</option>
+                                    <option value="Tesla">Tesla</option>
+                                    <option value="Jeep">Jeep</option>
+                                    <option value="Kia">Kia</option>
                                     <option value="Jaguar">Jaguar</option>
                                 </select>
                                 <label for="" class="label-main">Make</label>
@@ -114,9 +124,53 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
-                     tabindex="0">1233 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ea amet autem
-                    corporis cum at dolores laborum aut eum est, aliquid, doloremque maiores id eaque quaerat debitis
-                    perspiciatis exercitationem quis.
+                     tabindex="0">
+                    <div class="main-filter">
+                        <form action="{% url 'filter_results' %}" class="d-flex flex-wrap" name="filter">
+                            <div class="label">
+                                <select name="state" id="" class="main-select">
+                                    <option value="New">New</option>
+                                    <option value="USED">Used</option>
+                                </select>
+                                <label for="" class="label-main">Car state</label>
+                            </div>
+
+                            <div class="label">
+                                <select name="make" id="" class="main-select">
+                                    <option value="Ferrari">Ferrari</option>
+                                    <option value="BMW">BMW</option>
+                                    <option value="Mercedes">Mercedes</option>
+                                    <option value="Lamborghini">Lamborghini</option>
+                                    <option value="Porsche">Porsche</option>
+                                    <option value="Audi">Audi</option>
+                                    <option value="Tesla">Tesla</option>
+                                    <option value="Jeep">Jeep</option>
+                                    <option value="Kia">Kia</option>
+                                    <option value="Jaguar">Jaguar</option>
+                                </select>
+                                <label for="" class="label-main">Make</label>
+                            </div>
+
+                            <div class="label">
+                                <select name="color" id="" class="main-select">
+                                    {% for color in colors %}
+                                        <option value="{{ color }}">{{ color }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="" class="label-main">Color</label>
+                            </div>
+
+                            <div class="label">
+                                <select name="body_style" id="" class="main-select">
+                                    {% for category in categories %}
+                                        <option value="{{ category }}">{{ category }}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="" class="label-main">Body style</label>
+                            </div>
+                            <button type="submit" class="main-select btn-search-main">Search</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,10 +182,12 @@
             <div class="row justify-content-between">
                 {% for car in car_list %}
                     <div class="popular-car-card col-lg-3">
-                        <img src="{{ car.picture.url }}" alt="">
-                        <p class="car-info">{{ car.name }} <span
-                                class="popular-type text-center">· {{ car.state }}</span></p>
-                        <p class="car-price">${{ car.price }}</p>
+                        <a href="{% url 'car_detail' car.pk %}">
+                            <img src="{{ car.picture.url }}" alt="">
+                            <p class="car-info">{{ car.name }} <span
+                                    class="popular-type text-center">· {{ car.state }}</span></p>
+                            <p class="car-price">${{ car.price }}</p>
+                        </a>
                     </div>
                 {% endfor %}
             </div>
@@ -140,7 +196,11 @@
         <div class="container">
             <div class="row justify-content-between">
                 {% for category in categories %}
-                    <div class="category type-car mt-0 col-lg-3">{{ category }}</div>
+                    <form class="category type-car mt-0 col-lg-3" action="{% url 'category_filter' %}">
+                        <input type="hidden" name="body_style" value="{{ category }}">
+                        <button type="submit"
+                                style="width: 100%; height: 100%; background: transparent; border: none">{{ category }}</button>
+                    </form>
                 {% endfor %}
             </div>
         </div>
