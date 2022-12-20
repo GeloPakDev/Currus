@@ -43,7 +43,10 @@ ROOT_URLCONF = 'currus.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'web/templates']
+        'DIRS': [
+            BASE_DIR / 'web/templates',
+            BASE_DIR / 'web/templates/registration'
+        ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -114,3 +117,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+
+AUTH_USER_MODEL = 'web.CustomUser'

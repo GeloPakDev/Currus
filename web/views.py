@@ -1,6 +1,9 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Car
+from django.urls import reverse_lazy
 from django.db.models import Q
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
 
 
 # View for starting page
@@ -114,3 +117,14 @@ class CategoryFilterView(ListView):
         print("Body style : " + str(body_style))
 
         return Car.objects.filter(Q(body_style__iexact=body_style))
+
+
+class UserProfile(ListView):
+    model = get_user_model()
+    template_name = 'profile.html'
+
+
+class SignUpView(CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/register.html"
