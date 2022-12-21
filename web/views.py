@@ -1,3 +1,6 @@
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Car
 from django.urls import reverse_lazy
@@ -11,7 +14,7 @@ class HomePageView(ListView):
     model = Car
     template_name = 'index.html'
 
-    # Override get_context_data for passing CAR and CAR.CATEGORIES models
+    # Override get_context_data for passing CAR.COLORS and CAR.CATEGORIES models
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
         context['categories'] = [e.value for e in Car.BodyStyle]
@@ -24,6 +27,7 @@ class SearchResultView(ListView):
     model = Car
     template_name = 'result-page.html'
 
+    # Override get_context_data for passing CAR.COLORS and CAR.CATEGORIES models
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(SearchResultView, self).get_context_data(**kwargs)
         context['categories'] = [e.value for e in Car.BodyStyle]
@@ -102,29 +106,46 @@ class FullSearchView(ListView):
             fuel_type__iexact=fuel_type
         )
 
-
+# View for Advanced Search
 class AdvancedSearchView(ListView):
     template_name = 'advanced-search.html'
     model = Car
 
-
+# View for searching cars by categories
 class CategoryFilterView(ListView):
     model = Car
     template_name = 'result-page.html'
 
     def get_queryset(self):
         body_style = self.request.GET.get('body_style')
-        print("Body style : " + str(body_style))
-
         return Car.objects.filter(Q(body_style__iexact=body_style))
 
-
+# View for User Profile
 class UserProfile(ListView):
     model = get_user_model()
     template_name = 'profile.html'
 
-
+# View for User Registration
 class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("login")
     template_name = "registration/register.html"
+
+# function which add car to list of user's favourites
+@login_required
+def favourite_add(request, id):
+    car = get_object_or_404(Car, id=id)
+    if car.favourites.filter(id=request.user.id).exists():
+        car.favourites.remove(request.user)
+    else:
+        car.favourites.add(request.user)
+    return HttpResponseRedirect(request.META['HTTP_REFERER'])
+
+# View for listing user's favourites cars
+class Favourites(ListView):
+    model = Car
+    template_name = "favourite.html"
+
+    def get_queryset(self):
+        user_id = self.request.GET.get('user_id')
+        return Car.objects.filter(favourites=user_id)
