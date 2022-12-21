@@ -17,34 +17,36 @@
 <body>
 <form method="post">{% csrf_token %}
     <div class="d-flex justify-content-center align-items-center min-vh-100">
-        <div class="login-box">
+        <div class="login-box register-login">
             <div class="login-form">
-                <h2>Sign in</h2>
+                <h2>Sign up</h2>
                 <div class="inputBox">
-                    <input type="text" name="username" autofocus="" autocapitalize="none"
-                           autocomplete="username" maxlength="150" required="" id="id_username">
+                    <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username"
+                           autofocus="" required="" id="id_username">
                     <span>Username</span>
                     <i></i>
                 </div>
                 <div class="inputBox">
-                    <input type="password" name="password" autocomplete="current-password" required=""
-                           id="id_password">
+                    <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
                     <span>Password</span>
                     <i></i>
                 </div>
-                <div class="links">
-                    <a href="{% url 'signup' %}">Sign up</a>
+                <div class="inputBox">
+                    <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+                    <span>Repeat password</span>
+                    <i></i>
                 </div>
-                <input type="submit" value="Login">
+                <div class="links justify-content-end">
+                    <a href="{% url 'login' %}">Sign in</a>
+                </div>
+                <input type="submit" class="d-flex justify-content-center align-items-center" value="Register">
             </div>
         </div>
     </div>
 </form>
-
 <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/script.js' %}"></script>
-
 </body>
 </html>
